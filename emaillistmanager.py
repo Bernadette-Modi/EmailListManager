@@ -55,7 +55,7 @@ if __name__ == "__main__":
         email_mamger.add_email(email)
     elif choice == "2":
         query = input("Enter search query: ")
-         print("🔍 Search Result: ", email_manager.search_email(query))
+        print("🔍 Search Result: ", email_manager.search_email(query))
     elif chice == "3":
          print("📃 Email List: ", email_manager.show_all())
     else: 
