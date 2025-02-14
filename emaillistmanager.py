@@ -25,3 +25,4 @@ class EmailList:
                 print(f"✅ Added: {email}")
             else:
                 print(f"❌ Invalid email: {email}")
+   
