@@ -32,4 +32,8 @@ class EmailList:
         found_emails = list(filter(lambda e: query in e, self.emails))
         return found_emails if found_emails else "No matches found."
 
-    
+    @log
+    def show_all(self):
+        """Displays all stored emails."""
+        return self.emails if self.emails else "No emails stored."
+        
