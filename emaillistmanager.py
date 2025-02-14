@@ -36,4 +36,10 @@ class EmailList:
     def show_all(self):
         """Displays all stored emails."""
         return self.emails if self.emails else "No emails stored."
-        
+
+if __name__ == "__main__":
+    email_manager = EmailList()
+
+    email_manager.add_email("bernadette@example.com", "test123@gmail.com", "invalid-email@com")
+    print("🔍 Search Result: ", email_manager.search_email("example"))
+    print("📃 Email List: ", email_manager.show_all())
