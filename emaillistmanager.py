@@ -7,6 +7,7 @@ def display_menu():
     print("1. Add Email")
     print("2. Search Email")
     print("3. Show Email List")
+    print("4. Quit")
 
 Reg_email = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 
@@ -47,18 +48,22 @@ class EmailList:
 if __name__ == "__main__":
     email_manager = EmailList()
 
-    display_menu()
-    choice = input("Enter your choice (1-3): ")
+    while True: 
+        display_menu()
+        choice = input("Enter your choice (1-4): ")
 
-    if choice == "1":
-        email = input("Enter your email: ")
-        email_mamger.add_email(email)
-    elif choice == "2":
-        query = input("Enter search query: ")
-        print("🔍 Search Result: ", email_manager.search_email(query))
-    elif chice == "3":
-         print("📃 Email List: ", email_manager.show_all())
-    else: 
-        print("Inavlid Input! Please try again.")
+        if choice == "1":
+            email = input("Enter your email: ")
+            email_manager.add_email(email)
+        elif choice == "2":
+            query = input("Enter search query: ")
+            print("🔍 Search Result: ", email_manager.search_email(query))
+        elif choice == "3":
+            print("📃 Email List: ", email_manager.show_all())
+        elif choice == "4":
+            print("GoodBye!")
+            break
+        else: 
+            print("Inavlid Input! Please try again.")
 
    
