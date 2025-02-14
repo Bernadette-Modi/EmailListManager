@@ -25,4 +25,11 @@ class EmailList:
                 print(f"✅ Added: {email}")
             else:
                 print(f"❌ Invalid email: {email}")
-   
+    
+    @log
+    def search_email(self, query):
+        """Searches for emails containing a given query"""
+        found_emails = list(filter(lambda e: query in e, self.emails))
+        return found_emails if found_emails else "No matches found."
+
+    
