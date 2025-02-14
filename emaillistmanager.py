@@ -49,16 +49,16 @@ if __name__ == "__main__":
 
     display_menu()
     choice = input("Enter your choice (1-3): ")
-    
+
     if choice == "1":
-        add_email()
+        email = input("Enter your email: ")
+        email_mamger.add_email(email)
     elif choice == "2":
-        search_email()
+        query = input("Enter search query: ")
+         print("🔍 Search Result: ", email_manager.search_email(query))
     elif chice == "3":
-        show_all()
+         print("📃 Email List: ", email_manager.show_all())
     else: 
         print("Inavlid Input! Please try again.")
 
-    email_manager.add_email(input("Enter your email please: "))
-    print("🔍 Search Result: ", email_manager.search_email("example"))
-    print("📃 Email List: ", email_manager.show_all())
+   
