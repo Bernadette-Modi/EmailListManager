@@ -1,11 +1,12 @@
 import re
 from datetime import datetime 
 
-print("n\ Welcome to the Email List Manager.")
-print("What would you like to do?")
-print("1. Add Email")
-print("2. Search Email")
-print("3. Show Email List")
+def display_menu():
+    print("\nWelcome to the Email List Manager.")
+    print("What would you like to do?")
+    print("1. Add Email")
+    print("2. Search Email")
+    print("3. Show Email List")
 
 Reg_email = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 
@@ -45,7 +46,18 @@ class EmailList:
 
 if __name__ == "__main__":
     email_manager = EmailList()
+
+    display_menu()
+    choice = input("Enter your choice (1-3): ")
     
+    if choice == "1":
+        add_email()
+    elif choice == "2":
+        search_email()
+    elif chice == "3":
+        show_all()
+    else: 
+        print("Inavlid Input! Please try again.")
 
     email_manager.add_email(input("Enter your email please: "))
     print("🔍 Search Result: ", email_manager.search_email("example"))
