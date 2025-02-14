@@ -6,7 +6,7 @@ Reg_email = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 def log(func):
     def wrapper(*args, **kwargs):
         print(f"[LOG] {func.__name__} called at {datetime.now()}")
-        returen func(*args, **kwargs)
+        return func(*args, **kwargs)
     return wrapper
 
 class EmailList:
@@ -40,6 +40,6 @@ class EmailList:
 if __name__ == "__main__":
     email_manager = EmailList()
 
-    email_manager.add_email("bernadette@example.com", "test123@gmail.com", "invalid-email@com")
+    email_manager.add_email(input("Enter your email please: "))
     print("🔍 Search Result: ", email_manager.search_email("example"))
     print("📃 Email List: ", email_manager.show_all())
